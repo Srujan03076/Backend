@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('pull'){
             steps {
-                git branch: 'dummystatu', url: 'https://github.com/Srujan03076/Backend.git'
+                git branch: 'dummy', url: 'https://github.com/Srujan03076/Backend.git'
             }
         }
         stage('build'){
