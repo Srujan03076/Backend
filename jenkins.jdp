@@ -1,20 +1,18 @@
+
 pipeline {
-    agent none
+    agent any
     stages {
-        stage('pull') {
-            agent any
-             }
+        stage('pull'){
             steps {
-                git branch: 'main', url: 'https://github.com/Srujan03076/Backend.git'
+                git branch: 'dummystatu', url: 'https://github.com/Srujan03076/Backend.git'
             }
         }
-        stage('pull') {
-            agent any
-             }
+        stage('build'){
             steps {
-                sh 'mvn clean pacakage'
+                sh 'mvn clean package'
             }
         }
-        
+    }
+}
 
 
