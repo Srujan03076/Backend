@@ -12,6 +12,15 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+         stage('deploy'){
+            steps {
+                sh '''
+                    docker build -t project-b9-app .
+                    docker tag srujan-app:latest 642737942716.dkr.ecr.ap-south-1.amazonaws.com/project-b9-app:latest
+                    docker push 642737942716.dkr.ecr.ap-south-1.amazonaws.com/project-b9-app:latest
+                '''
+            }
+        }
     }
 }
 
